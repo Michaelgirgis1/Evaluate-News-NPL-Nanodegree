@@ -7,7 +7,7 @@ function handleSubmit(event) {
     if (checkUrl(url)) {
         console.log("::: FORM URL VALID :::")   
         console.log("BUILDING REQUEST");
-        fetch('http://localhost:8081/sent', {
+        fetch('http://localhost:8080/sent', {
             method: 'POST',
             mode: 'cors',
             headers: { 'Content-Type': 'application/json', },
@@ -15,19 +15,12 @@ function handleSubmit(event) {
         })
         .then(res => res)
         .then(function(res) {
-            document.getElementById('name').innerHTML= res.polarity
+            document.getElementById('results').innerHTML= res.polarity
             console.log(res)
             console.log(res.polarity)
 
         })
-
-    } else {
-        // Display error message if URL is not valid
-        // var error_section = document.querySelector('section.errors');
-        // var error = document.querySelector('section.errors #error');
-        // error.innerHTML = "The URL:[" + url + "] is not valide. Please enter a valid url"
-        // error_section.style.display = "block";
-    }
+    } 
 }
 function checkUrl(str) {
     var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
