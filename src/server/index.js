@@ -9,8 +9,13 @@ const requestPost=require('./request') ;
 const cors = require('cors')
 
 const dotenv = require('dotenv');
-dotenv.config({path: "process.env"});
+dotenv.config();
 
+
+/* Middleware*/
+// Here we are configuring express to use body-parser as middleware
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 var textapi = new AYLIENTextAPI({
     application_id: process.env.application_id,
@@ -29,11 +34,6 @@ function PostHandler(req, res, next) {
  
 }
 // console.log(`process.env.APP_ID ${application_id}`)
-
-/* Middleware*/
-// Here we are configuring express to use body-parser as middleware
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
 
 // Cors for cross origin allowance
 
