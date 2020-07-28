@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>Test</title>
-        <link rel="stylesheet" href="./../styles/resets.scss">
-        <link rel="stylesheet" href="./../styles/base.scss">
-        <link rel="stylesheet" href="./../styles/header.scss">
-        <link rel="stylesheet" href="./../styles/form.scss">
-        <link rel="stylesheet" href="./../styles/footer.scss">
+        <link rel="stylesheet" href="../styles/resets.css">
+        <link rel="stylesheet" href="../styles/base.css">
+        <link rel="stylesheet" href="../styles/header.css">
+        <link rel="stylesheet" href="../styles/form.css">
+        <link rel="stylesheet" href="../styles/footer.css">
     </head>
 
     <body>
@@ -17,20 +17,43 @@
             </div>
             <div class="">
                 navigation
-            </div>
+            </div>1
         </header>
         <main>
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value=""  placeholder="Name">
-                    <label for="url">Enter an https:// URL:</label>
-                    <input type="url" name="url" id="url" 
-                    placeholder="https://example.com" pattern="https://.*" size="40" required>
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
-                </form>
-           <br>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
+            <section id="app">
+                <header class = "header">
+                    <h1>Reservation Your City</h1>
+                </header>
+                <div id = "travel-form">
+                    <section class ="location">
+                        <label for="country">What Country?</label>
+                        <input type="text" id="country" placeholder="Enter Country.Ex: USA, Enter State"/>
+                    </section>
+                    <section class ="date-section">
+                        <label for="date">When are you leaving?</label>
+                        <input type="date" class="date-leave"/>
+                    </section>
+                    <section class ="date-section">
+                        <label for="date">When are you coming back?</label>
+                        <input type="date" class="date-back"/>
+                    </section>
+                    <section class ="btnCont">
+                        <button
+                            id="getInfo"
+                            type = "submit"> Get Info! </button>
+                    </section>
+                </div>
+                <section class = "response-section hide">
+                    <img class = "loaction-image" src = "">
+                    <h2 class = "title">Your Travel Information</h2>
+                    <div class = "location"></div>
+                    <div class = "date-reservation"></div>
+                    <h2>Weather Forcast</h2>
+                    <div class = "weather-status"></div>
+                    <button id = "reload" onclick = "return Client.reload(event)">
+                        Try a different location
+                    </button>
+                </section>
             </section>
         </main>
 
