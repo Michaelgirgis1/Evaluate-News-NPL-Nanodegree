@@ -69,7 +69,7 @@ function performAction(e){
         let cityName = weatherData.city_name,
          dateTime = weatherData.datetime,
          weatherDescription = weatherData.weather.description
-        //  postData('/addData', { cityN:cityName, dateT: dateTime, weatherD: weatherDescription})
+         postData('/addData', { cityN:cityName, dateT: dateTime, weatherD: weatherDescription})
         // console.log(cityName, dateTime,weatherDescription )
         updateUi()
         getImage(imageApi, pixKey, country)
